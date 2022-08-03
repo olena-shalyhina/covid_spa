@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 // import FComponent from './FComponent';
 // import CComponent from './CComponent';
-import reportWebVitals from './reportWebVitals';
+// import reportWebVitals from './reportWebVitals'; - удалить
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -33,7 +33,7 @@ root.render(
 
 //gitignore - нужна, что-бы git не отправлял ненужные файлы (например из папки node_modules)
 
-//package-lock.json - хранится вся информация о библиотеках, которые используются и их версия;
+//package-lock.json - хранится вся информация о библиотеках, которые используются и их версия, все изменения через package.json;
 
 //package.json - хранится вся информация о библиотеках, которые используются и их версия;
 
@@ -42,4 +42,4 @@ root.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// reportWebVitals();
