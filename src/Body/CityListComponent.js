@@ -2,7 +2,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
 
-function CityListComponent (props) {
+function CityListComponent(props) {
 
   const cityes = [
     'Tallinn',
@@ -10,10 +10,10 @@ function CityListComponent (props) {
     'Tartu'
   ]
 
-  return  (
+  return (
     <InputGroup className="mb-3">
       <InputGroup.Text>Select City</InputGroup.Text>
-      <Form.Control aria-label="First name" />
+      <Form.Control onChange={(e) => props.setSearchCity(e.target.value)} aria-label="Search City" />
       <Form.Select onChange={(e) => props.setSelectedCity(e.target.value)} aria-label="Default select example">
         <option value=''>Open this select menu</option>
         {cityes.map(city => (<option key={city} value={city}>{city}</option>))}

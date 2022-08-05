@@ -1,16 +1,19 @@
 import { useState } from "react";
-import {Container} from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import CityListComponent from "./CityListComponent";
 
 
-function BodyComponent () {
+function BodyComponent() {
 
   const [selectedCity, setSelectedCity] = useState('Tallinn');
-
-  return  (
+  const [searchCity, setSearchCity] = useState('');
+  return (
     <Container className="mt-4">
-      <CityListComponent setSelectedCity={setSelectedCity}/>
+      <CityListComponent
+        setSearchCity={setSearchCity}
+        setSelectedCity={setSelectedCity} />
       <h2>{selectedCity}</h2>
+      <h2>{searchCity}</h2>
     </Container>
   )
 }
