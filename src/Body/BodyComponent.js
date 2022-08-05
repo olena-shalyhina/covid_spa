@@ -6,7 +6,8 @@ import ChartsComponent from "./ChartsComponent";
 function BodyComponent() {
 
   const [selectedCity, setSelectedCity] = useState('Tallinn');
-  
+  // каждый компонент может принимать properties, как любая функция принимает аргументы
+  // properties - могут быть любого типа: string, namber и т.д.
   return (
     <Container className="mt-4">
       <CityListComponent

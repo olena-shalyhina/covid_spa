@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+//глобальный импорт css файлов
 import './index.css';
 import App from './App';
 // import FComponent from './FComponent';
 // import CComponent from './CComponent';
 // import reportWebVitals from './reportWebVitals'; - удалить
-
+// React.StrictMode - отвечает за строгий режим кода и обнаруживает проблемы в приложении.
+// Из-за него происходит дополнительный render компонентов, в больших проектах его так не используют.
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
+//запускаем наше приложение
 root.render(
   <React.StrictMode>
     {/* <App />Главный компонент, который и отображает страницу */}
