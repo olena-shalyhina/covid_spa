@@ -1,28 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-// import FComponent from './FComponent';
-// import CComponent from './CComponent';
-// import reportWebVitals from './reportWebVitals'; - удалить
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+// import FComponent from "./FComponent";
+// import CComponent from "./CComponent";
+// import reportWebVitals from "./reportWebVitals"; - удалить
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    {/* <App />Главный компонент, который и отображает страницу */}
+  // <React.StrictMode>
+    // <App />Главный компонент, который и отображает страницу
     <App />
-    {/* <FComponent /> */}
-    {/* Можно копировать компонент сколько угодно раз */}
-    {/* <FComponent />
-    <FComponent />
-    <FComponent />
-    <FComponent />
-    <CComponent />
-    <FComponent />
-    <FComponent />
-    <FComponent />
-    <FComponent /> */}
-  </React.StrictMode>
+    //  <FComponent />
+    //  Можно копировать компонент сколько угодно раз
+    // <FComponent />
+    // <FComponent />
+    // <FComponent />
+    // <FComponent />
+    // <CComponent />
+    // <FComponent />
+    // <FComponent />
+    // <FComponent />
+    // <FComponent /> 
+  // </React.StrictMode>
 );
 //НАЗНАЧЕНИЕ ПАПОК, которые генерируются в папке нашего проекта при запуске команды: npx create-react-app covid_spa
 //node_modules - находится весь react + дополнительные модули; 

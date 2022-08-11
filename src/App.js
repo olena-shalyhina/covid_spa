@@ -1,7 +1,7 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container } from 'react-bootstrap';
-import BodyComponent from './Body/BodyComponent';
-import NavBarComponent from './NavBarComponent';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container } from "react-bootstrap";
+import BodyComponent from "./Body/BodyComponent";
+import NavBarComponent from "./NavBarComponent";
 
 function App() {
   return (

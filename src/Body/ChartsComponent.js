@@ -1,16 +1,14 @@
 import { useState } from "react";
-import Tab from 'react-bootstrap/Tab';
-import Tabs from 'react-bootstrap/Tabs';
-import Row from 'react-bootstrap/Tabs';
-import Col from 'react-bootstrap/Tabs';
+import Tab from "react-bootstrap/Tab";
+import Tabs from "react-bootstrap/Tabs";
 import RankedChartsComponent from "./RankedChartsComponent";
 import ReportedCasesComponent from "./ReportedCasesComponent";
 
 
-function ChartsComponent() {
+function ChartsComponent(props) {
 
-  const [selectedTab, setSelectedTab] = useState('');
-
+  const [selectedTab, setSelectedTab] = useState("");
+  console.log('chartscomponent', props.countryData);
   return (
     <Tabs
       defaultActiveKey="reported-cases"
@@ -23,9 +21,8 @@ function ChartsComponent() {
         <ReportedCasesComponent title={selectedTab} />
       </Tab>
       <Tab eventKey="ranked-charts" title="Ranked charts">
-        <RankedChartsComponent />
+        <RankedChartsComponent title={selectedTab} />
       </Tab>
-
     </Tabs>
   );
 }
