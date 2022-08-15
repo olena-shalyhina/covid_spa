@@ -3,7 +3,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import { AreaChart } from "reaviz";
-
+//useRef - позволяет нам точечно подобраться в DOM структуру элемента
+//в любом элементе мы можем его назначить  и передать его структуру в любой параметр
+//DOM структура содержится в .curient
 function ReportedCasesComponent(props) {
   const formDom = useRef(null);
   const [chartData, setChartData] = useState([]);
@@ -36,6 +38,7 @@ function ReportedCasesComponent(props) {
     console.log("cumulativeMod", cumulativeMode.checked);
   }
   console.log('chartData', chartData);
+  //ref={formDom} - передаем структуру DOM в форму для получения пользовательского выбора 
   return (<>
     <div>{props.title}</div>
     <Row>

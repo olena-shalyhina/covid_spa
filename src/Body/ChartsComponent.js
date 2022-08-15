@@ -19,6 +19,7 @@ function ChartsComponent(props) {
       onSelect={(eventKey) => setSelectedTab(eventKey)}
     >
       <Tab eventKey="reported-cases" title="Reported cases">
+      // ...props - позволяет передать все props, которые были назначены в ChartsComponent передаем в ReportedCasesComponent
         <ReportedCasesComponent title={selectedTab} {...props} />
       </Tab>
       <Tab eventKey="ranked-charts" title="Ranked charts">

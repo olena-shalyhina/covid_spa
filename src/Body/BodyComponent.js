@@ -17,16 +17,24 @@ function BodyComponent() {
     setCountryData(covidData[countryKey]);
   }
 
+//Запускаем запрос на получение данных, дожидаемся ответа и возвращаем результат
+//try пытается выполнить все,а
+//catch - выдаст нам ошибку и передаст ее в  error переменную если будут проблемы с запросом
   async function getData() {
     try {
       const data = await readCovidData();
       console.log(data);
       return data;
-    } catch (e) {
-      console.error(e);
+    } catch (error) {
+      console.error(error);
     }
   }
-
+//useEffect - это хукБ который запускается, только после того как компонент обработался
+//в отличие от useState не запускает новую обработку документа
+//в useEffect - можно поставить триггеры которые будут управлять его запуском
+//мы установили null, чтобы он запустился только один раз при первой обрааботке компонента
+//then - запускается, когда предидущая функция выполнила return
+//then - принимает и передает ответ с предидущей функции
   useEffect(() => {
     getData().then((data) => {
       setCovidData(data);
