@@ -8,7 +8,8 @@ import ReportedCasesComponent from "./ReportedCasesComponent";
 function ChartsComponent(props) {
 
   const [selectedTab, setSelectedTab] = useState("");
-  console.log('chartscomponent', props.countryData);
+ 
+ 
   return (
     <Tabs
       defaultActiveKey="reported-cases"
@@ -18,7 +19,7 @@ function ChartsComponent(props) {
       onSelect={(eventKey) => setSelectedTab(eventKey)}
     >
       <Tab eventKey="reported-cases" title="Reported cases">
-        <ReportedCasesComponent title={selectedTab} />
+        <ReportedCasesComponent title={selectedTab} {...props} />
       </Tab>
       <Tab eventKey="ranked-charts" title="Ranked charts">
         <RankedChartsComponent title={selectedTab} />

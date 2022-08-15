@@ -40,7 +40,7 @@ function BodyComponent() {
   return (
     <Container className="mt-4">
       <CountryListComponent countryList={countryList} handleCountrySelect={handleCountrySelect} />
-      <ChartsComponent />
+      <ChartsComponent countryData={countryData} />
     </Container>
   )
 }

@@ -1,21 +1,41 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import { AreaChart } from "reaviz";
 
 function ReportedCasesComponent(props) {
-
   const formDom = useRef(null);
+  const [chartData, setChartData] = useState([]);
 
+  const yearData = props.countryData?.data.filter(data => new Date(data.date).getFullYear() === 2022);
+  console.log('yearData', yearData);
+ 
   function handleOnInput(e) {
     const [deathCount, confirmedCases, dailyNewValues, cumulativeMode] = formDom.current;
+    let dataObject = 'new_deaths';
+    if(deathCount.checked && cumulativeMode.checked) {
+      dataObject = 'total_deaths';
+    }
+    if(confirmedCases.checked && dailyNewValues.checked) {
+      dataObject = 'new_cases';
+    }
+    if(confirmedCases.checked && cumulativeMode.checked) {
+      dataObject = 'total_cases';
+    }
 
+    setChartData(yearData.map(data => {
+      return {
+        key: new Date(data.date),
+        data: data[dataObject] || 0,
+      }
+    }));
     console.log("deathCount", deathCount.checked);
     console.log("confirmedCases", confirmedCases.checked);
     console.log("dailyNewValues", dailyNewValues.checked);
     console.log("cumulativeMod", cumulativeMode.checked);
   }
+  console.log('chartData', chartData);
   return (<>
     <div>{props.title}</div>
     <Row>
@@ -47,13 +67,7 @@ function ReportedCasesComponent(props) {
         </Form>
       </Col>
       <Col sm={8}>
-        <AreaChart
-          data={[
-            { key: new Date("11/29/2019"), data: 8 },
-            { key: new Date("11/30/2019"), data: 13 },
-            { key: new Date("12/1/2019"), data: 6 },
-          ]}
-        />
+        {chartData ? <AreaChart data={chartData} /> : ''}
       </Col>
     </Row>
   </>);

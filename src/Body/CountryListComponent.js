@@ -6,7 +6,7 @@ import InputGroup from "react-bootstrap/InputGroup";
 function CountryListComponent(props) {
   const [inputValue, setInputValue] = useState("");
 
-console.log(props.countryList);
+// console.log(props.countryList);
   return (
     <InputGroup className="mb-3">
       <InputGroup.Text>Select country</InputGroup.Text>
