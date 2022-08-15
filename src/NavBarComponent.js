@@ -1,5 +1,5 @@
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
 
 // NavBarComponent - компонент который содержит навигацию и лого
 // Все изображения находятся в папке pablic

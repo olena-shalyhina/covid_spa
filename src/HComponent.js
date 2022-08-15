@@ -18,7 +18,7 @@ const HComponent = (props) => {
       {count && (<>Vsem Privet! {props.addMe}</>)} 
 
       {/* или можем добавить сокращенную функцию if else у нас 2 условия:
-      {count ? (<>Vsem Privet! {props.addMe}</>) : ''} */}
+      {count ? (<>Vsem Privet! {props.addMe}</>) : ""} */}
 
       <button onClick={() => setCount(count + 1)}> Add {count}</button>
     </div>);
