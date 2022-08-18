@@ -6,11 +6,17 @@ import { AreaChart } from "reaviz";
 
 function ReportedCasesComponent(props) {
   const formDom = useRef(null);
-  const [chartData, setChartData] = useState([]);
+  const [chartData, setChartData] = useState(null);
 
   const yearData = props.countryData?.data.filter(data => new Date(data.date).getFullYear() === 2022);
+  const initialData = yearData?.map(data => {
+    return {
+      key: new Date(data.date),
+      data: data.new_deaths || 0,
+    }
+  });
   console.log('yearData', yearData);
- 
+  
   function handleOnInput(e) {
     const [deathCount, confirmedCases, dailyNewValues, cumulativeMode] = formDom.current;
     let dataObject = 'new_deaths';
@@ -67,7 +73,7 @@ function ReportedCasesComponent(props) {
         </Form>
       </Col>
       <Col sm={8}>
-        {chartData ? <AreaChart data={chartData} /> : ''}
+        {(chartData || initialData) ? <AreaChart data={chartData || initialData} /> : ''}
       </Col>
     </Row>
   </>);
