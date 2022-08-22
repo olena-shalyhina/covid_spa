@@ -1,19 +1,22 @@
 $caruselWidth: 100%;
-$caruselHeight: 300px;
-$textcolor: black;
-$textSize: 40px;
-
+$caruselHeight: 50vh;
+$textcolor: rgb(11, 103, 168);
+$textSize:4em;
+$carouselBackground: rgb(206, 230, 236);
 
 .wrapper {
   width: $caruselWidth;
   height: $caruselHeight;
+  background-color: $carouselBackground;
 }
 
 .caption {
   position: initial !important;
+  margin-top:60px;
+  
 }
 
-.caption h3 {
+.caption h1 {
   color: $textcolor;
 }
 
@@ -21,3 +24,6 @@ $textSize: 40px;
   font-size: $textSize;
   color: $textcolor;
 }
+// .carousel-control:active {
+//   color: $textcolor;
+// }

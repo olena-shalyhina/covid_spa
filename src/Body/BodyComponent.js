@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap";
 import ChartsComponent from "./ChartsComponent";
 import { readCovidData } from '../dataService/fileService';
 import { getTodayCovidData } from "../dataService/apiService";
+import RouteComponent from "./RouteComponenet";
 
 function BodyComponent () {
 
@@ -40,8 +41,11 @@ function BodyComponent () {
 
     return (
         <Container className="mt-4">
-            <ChartsComponent 
-            covidTodayData={covidTodayData} countryList={countryList} countryData={countryData} covidData={covidData} 
+            <RouteComponent 
+            covidTodayData={covidTodayData}
+            countryList={countryList}
+            countryData={countryData}
+            covidData={covidData} 
             countryCount={Object.keys(covidData).length} />
         </Container>
     )

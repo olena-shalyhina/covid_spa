@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+
 // import FComponent from "./FComponent";
 // import CComponent from "./CComponent";
 // import reportWebVitals from "./reportWebVitals"; - удалить
@@ -9,23 +11,25 @@ import App from "./App";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
-    // <App />Главный компонент, который и отображает страницу
+  // <App />Главный компонент, который и отображает страницу
+  <BrowserRouter>
     <App />
-    //  <FComponent />
-    //  Можно копировать компонент сколько угодно раз
-    // <FComponent />
-    // <FComponent />
-    // <FComponent />
-    // <FComponent />
-    // <CComponent />
-    // <FComponent />
-    // <FComponent />
-    // <FComponent />
-    // <FComponent /> 
+  </BrowserRouter>
+  //  <FComponent />
+  //  Можно копировать компонент сколько угодно раз
+  // <FComponent />
+  // <FComponent />
+  // <FComponent />
+  // <FComponent />
+  // <CComponent />
+  // <FComponent />
+  // <FComponent />
+  // <FComponent />
+  // <FComponent /> 
   // </React.StrictMode>
 );
 //НАЗНАЧЕНИЕ ПАПОК, которые генерируются в папке нашего проекта при запуске команды: npx create-react-app covid_spa
-//node_modules - находится весь react + дополнительные модули; 
+//node_modules - находится весь react + дополнительные модули;
 
 //public - находится информация, которая доступна всем (html, изображения, шрифты и т.п.);
 
