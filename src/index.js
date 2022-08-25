@@ -3,7 +3,8 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
-
+import { Provider } from "react-redux";
+import { store } from './ReduxState';
 // import FComponent from "./FComponent";
 // import CComponent from "./CComponent";
 // import reportWebVitals from "./reportWebVitals"; - удалить
@@ -12,9 +13,11 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
   // <App />Главный компонент, который и отображает страницу
+  <Provider store={store}>
   <BrowserRouter>
     <App />
   </BrowserRouter>
+  </Provider>
   //  <FComponent />
   //  Можно копировать компонент сколько угодно раз
   // <FComponent />

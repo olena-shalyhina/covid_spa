@@ -1,29 +1,53 @@
 $caruselWidth: 100%;
-$caruselHeight: 50vh;
-$textcolor: rgb(11, 103, 168);
-$textSize:4em;
-$carouselBackground: rgb(206, 230, 236);
+$caruselHeight: 60vh;
+$mainColor: #0b67a8;
+$textSize: 4em;
+$carouselBackground: #cee6ec;
 
 .wrapper {
   width: $caruselWidth;
   height: $caruselHeight;
   background-color: $carouselBackground;
+  border: 2px solid $mainColor;
+  border-radius: 10px;
 }
 
 .caption {
   position: initial !important;
-  margin-top:60px;
+  margin-top:50px;
   
 }
 
 .caption h1 {
-  color: $textcolor;
+  color: $mainColor;
 }
 
 .caption p {
   font-size: $textSize;
-  color: $textcolor;
+  color: $mainColor;
 }
-// .carousel-control:active {
-//   color: $textcolor;
-// }
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  border-radius: 50%;
+  background-color: $mainColor;
+}
+
+.carousel-indicators {
+  width: 20vw;
+  margin: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: $mainColor;
+}
+
+.navbar-toggler {
+  background-color: $carouselBackground;
+  border: 2px solid $mainColor;
+  border-radius: 10px;
+}
+
+.nav-link {
+  color: $mainColor;
+}

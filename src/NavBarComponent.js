@@ -4,22 +4,26 @@ import Nav from "react-bootstrap/Nav";
 import Form from 'react-bootstrap/Form';
 import { useState } from "react";
 import { Link } from 'react-router-dom';
+import { useSelector } from "react-redux";
 
 
 
 function NavBarComponent() {
 
   const [theme, setTheme] = useState('light');
+  const countryId = useSelector(state => state.countryId);
 
   function handleClick() {
     if (theme === 'light') {
       setTheme('dark');
       document.body.style.background = 'black';
       document.getElementsByClassName('navbar-brand')[0].style.color = 'white';
+      // document.querySelectorAll('.form-check-label').forEach(elem => elem.style.color = '#0b67a8');   
     } else {
       setTheme('light');
       document.body.style.background = 'white';
       document.getElementsByClassName('navbar-brand')[0].style.color = 'black';
+      // document.querySelectorAll('.form-check-label').forEach(elem => elem.style.color = 'black');
     }
   }
   return (
@@ -38,8 +42,8 @@ function NavBarComponent() {
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-            <Link to="/reported-cases/Estonia" className="nav-link">Reported cases Estonia</Link>
-            <Link to="/ranked-charts" className="nav-link">Ranked charts</Link>
+            <Link to={'/reported-cases/' + countryId} className="nav-link">Reported cases Estonia</Link>
+            <Link to="/ranked-charts/cases/20" className="nav-link">Ranked charts</Link>
         </Nav>
         </Navbar.Collapse>
         <Form.Check
