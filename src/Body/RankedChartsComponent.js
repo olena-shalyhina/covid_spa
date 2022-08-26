@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
@@ -10,17 +10,18 @@ function RankedChartsComponent(props) {
     const [chartData, setCartData] = useState(null);
     const { cases, count} = useParams();
 
-
-    const initialData = Object.values(props.covidData).slice(0, count || 9).map(data => {
-        let objectData = 'total_deaths';
-        if (cases) {
-            objectData = 'total_cases';
-        }
-        return {
-            key: data.location,
-            data: data.data.reverse()[0][objectData] || 0,
-        }
-    });
+    useEffect(() => {
+        setCartData(Object.values(props.covidData).slice(0, count || props.initialCountryCount).map(data => {
+            let objectData = 'total_deaths';
+            if (cases) {
+                objectData = 'total_cases';
+            }
+            return {
+                key: data.location,
+                data: data.data.reverse()[0][objectData] || 0,
+            }
+        }))
+    }, [props.covidData, count, cases, props.initialCountryCount]);
 
     function handleOnInput(e) {
         const [totalNumberOfDeaths, totalNumberOfCases, countriesCount] = formDom.current;
@@ -72,14 +73,18 @@ function RankedChartsComponent(props) {
                 </Form>
             </Col>
             <Col sm={8}>
-                {chartData || initialData ? <BarChart
-                    data={chartData || initialData}
+                {chartData ? <BarChart
+                    data={chartData}
                     height={350}
                 /> : ""}
 
             </Col>
         </Row>
     </>);
+}
+
+RankedChartsComponent.defaultProps = {
+    initialCountryCount: 9,
 }
 
 export default RankedChartsComponent;

@@ -12,18 +12,19 @@ function NavBarComponent() {
 
   const [theme, setTheme] = useState('light');
   const countryId = useSelector(state => state.countryId);
+  const numberOf = useSelector(state => state.numberOf);
 
   function handleClick() {
     if (theme === 'light') {
       setTheme('dark');
       document.body.style.background = 'black';
       document.getElementsByClassName('navbar-brand')[0].style.color = 'white';
-      // document.querySelectorAll('.form-check-label').forEach(elem => elem.style.color = '#0b67a8');   
+      document.querySelectorAll('.form-check-label').forEach(elem => elem.style.color = '#0b67a8');   
     } else {
       setTheme('light');
       document.body.style.background = 'white';
       document.getElementsByClassName('navbar-brand')[0].style.color = 'black';
-      // document.querySelectorAll('.form-check-label').forEach(elem => elem.style.color = 'black');
+      document.querySelectorAll('.form-check-label').forEach(elem => elem.style.color = 'black');
     }
   }
   return (
@@ -43,7 +44,7 @@ function NavBarComponent() {
         <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
             <Link to={'/reported-cases/' + countryId} className="nav-link">Reported cases Estonia</Link>
-            <Link to="/ranked-charts/cases/20" className="nav-link">Ranked charts</Link>
+            <Link to={'/ranked-charts/' + (numberOf ==='total_cases' ? 'total_cases' : 'total_death') + '/20'} className="nav-link">Ranked charts</Link>
         </Nav>
         </Navbar.Collapse>
         <Form.Check

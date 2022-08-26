@@ -1,27 +1,31 @@
-import { useEffect } from "react";
-import { getTodayCovidData } from "../dataService/apiService";
+import { useEffect, useState } from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import '../styles/CovidToday.scss';
+import { getTodayCovidData } from '../dataService/apiService';
 
-function CovidTodayComponent (props) {
+function CovidTodayComponent () {
+  const [covidTodayData, setCovidTodayData] = useState(null);
+  useEffect(() => {
+    getTodayCovidData().then(data => setCovidTodayData(data));
+  }, []);
  return (
   <Carousel className="wrapper">
   <Carousel.Item>
     <Carousel.Caption className="caption">
       <h1>Today Deaths</h1>
-      <p>{props.covidTodayData?.todayDeaths}</p>
+      <p>{covidTodayData?.todayDeaths}</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
     <Carousel.Caption className="caption">
       <h1>Today Cases</h1>
-      <p>{props.covidTodayData?.todayCases}</p>
+      <p>{covidTodayData?.todayCases}</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
     <Carousel.Caption className="caption">
       <h1>Today Recovered</h1>
-      <p>{props.covidTodayData?.todayRecovered}</p>
+      <p>{covidTodayData?.todayRecovered}</p>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>

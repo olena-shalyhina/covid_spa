@@ -1,37 +1,40 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { AreaChart } from 'reaviz';
+import { useParams } from 'react-router-dom';
+import { useDispatch } from "react-redux";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-import { AreaChart } from 'reaviz';
 import CountryListComponent from './CountryListComponent';
-import { useParams } from 'react-router-dom';
+import { setNumberOf } from "../ReduxState";
 
 function ReportedCasesComponent(props) {
 
     const formDom = useRef(null);
     const [chartData, setChartData] = useState(null);
-    const [countryData, setCountryData] = useState(null);
-    const { country } = useParams();
-   
-    // const yearData = countryData?.data.filter(data => new Date(data.date).getFullYear() === 2022);
+    const [countryId, setCountryId] = useState(null);
+    const params = useParams();
+    const dispatch = useDispatch();
 
+    const id = countryId || params.country || props.initialCountryId;
 
-    const initialCountry = countryData || 
-        props.covidData[country];
-    const initialData = initialCountry?.data?.map(data => {
+    useEffect(() => {
+        setChartData(props.covidData[id]?.data?.map(data => {
         return {
             key: new Date(data.date),
             data: data.new_deaths || 0,
         }
-    });
+    }));
+}, [id, props.covidData]);
 
     function handleCountrySelect(countryKey) {
-        setCountryData(props.covidData[countryKey]);
+        setCountryId(countryKey);
     }
 
     function handleOnInput(e) {
         const [deathCount, confirmedCases, dailyNewValues, cumulativeMode] = formDom.current;
 
+        dispatch(setNumberOf(deathCount.checked ? 'total_deaths' : 'total_cases'))
         let dataObject = 'new_deaths';
         if (deathCount.checked && cumulativeMode.checked) {
             dataObject = 'total_deaths';
@@ -43,7 +46,7 @@ function ReportedCasesComponent(props) {
             dataObject = 'total_cases';
         }
 
-        setChartData(countryData?.data?.map(data => {
+        setChartData(props.covidData[id]?.data?.map(data => {
             return {
                 key: new Date(data.date),
                 data: data[dataObject] || 0,
@@ -53,9 +56,10 @@ function ReportedCasesComponent(props) {
 
     return (<>
         {props.countryList.length ?
-        <CountryListComponent countryList={props.countryList}
+        <CountryListComponent
+        countryList={props.countryList}
         handleCountrySelect={handleCountrySelect}
-        country={country} />
+        country={params.country} />
         : ""}
         <Row>
             <Col sm={4}>
@@ -86,10 +90,14 @@ function ReportedCasesComponent(props) {
                 </Form>
             </Col>
             <Col sm={8}>
-                {(chartData || initialData) ? <AreaChart data={chartData || initialData} height={350} /> : ""}
+                {chartData ? (<AreaChart data={chartData} height={350} />) : ""}
             </Col>
         </Row>
     </>);
+}
+
+ReportedCasesComponent.defoultProps = {
+    initialCountry: 'OWID_WRL',
 }
 
 export default ReportedCasesComponent;
