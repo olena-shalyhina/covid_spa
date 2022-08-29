@@ -44,12 +44,12 @@ function NavBarComponent() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Link to={'/reported-cases/' + countryId} className="nav-link">Reported cases Estonia</Link>
-            <Link to={'/ranked-charts/' + (numberOf === 'total_cases' ? 'total_cases' : 'total_death') + '/20'} className="nav-link">Ranked charts</Link>
+            <Link to={'/ranked-charts/' + (numberOf === 'total_cases' ? 'total_cases' : 'total_deaths') + '/20'} className="nav-link">Ranked charts</Link>
           </Nav>
         </Navbar.Collapse>
         <Form.Check
           type="switch"
-          id="custom-switch"
+          id="theme-switch"
           onClick={() => handleClick()}
         />
       </Container>
