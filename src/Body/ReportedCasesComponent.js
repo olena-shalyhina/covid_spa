@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from 'react';
-import { AreaChart } from 'reaviz';
-import { useParams } from 'react-router-dom';
+import { useEffect, useRef, useState } from "react";
+import { AreaChart } from "reaviz";
+import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import CountryListComponent from './CountryListComponent';
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
+import CountryListComponent from "./CountryListComponent";
 import { setNumberOf } from "../ReduxState";
 
 function ReportedCasesComponent(props) {
@@ -34,7 +34,8 @@ function ReportedCasesComponent(props) {
     function handleOnInput(e) {
         const [deathCount, confirmedCases, dailyNewValues, cumulativeMode] = formDom.current;
 
-        dispatch(setNumberOf(deathCount.checked ? 'total_deaths' : 'total_cases'))
+        dispatch(setNumberOf(deathCount.checked ? 'total_deaths' : 'total_cases'));
+
         let dataObject = 'new_deaths';
         if (deathCount.checked && cumulativeMode.checked) {
             dataObject = 'total_deaths';
@@ -96,7 +97,7 @@ function ReportedCasesComponent(props) {
     </>);
 }
 
-ReportedCasesComponent.defoultProps = {
+ReportedCasesComponent.defaultProps = {
     initialCountry: 'OWID_WRL',
 }
 

@@ -17,13 +17,12 @@ function BodyComponent(props) {
             const list = [];
             for (const key in data) {
                 list.push({ key, name: data[key].location });
-                if (data[key].location === props.InitialCpuntry) {
+                if (data[key].location === props.initialCountry) {
                     dispatch(setCountryId(key));
                 }
             }
             setCountryList(list);
         });
-        
     }, []);
 
     return (
@@ -37,8 +36,8 @@ function BodyComponent(props) {
     )
 }
 
-BodyComponent.defoultProps = {
-    initialCountry: 'Estonia',
+BodyComponent.defaultProps = {
+    initialCountry: "Estonia",
 }
 
 export default BodyComponent;

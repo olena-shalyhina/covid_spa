@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Tab from 'react-bootstrap/Tab';
-import Tabs from 'react-bootstrap/Tabs';
+import Tab from "react-bootstrap/Tab";
+import Tabs from "react-bootstrap/Tabs";
 import CovidTodayComponent from "./CovidTodayComponent";
 import RankedChartsComponent from "./RankedChartsComponent";
 import ReportedCasesComponent from "./ReportedCasesComponent";
