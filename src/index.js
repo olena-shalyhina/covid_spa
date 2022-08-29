@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
+
+//react-redux вспомогательная библиотека для того что бы связать redux с react
 import { Provider } from "react-redux";
 import { store } from "./ReduxState";
 

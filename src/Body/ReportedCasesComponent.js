@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { AreaChart } from "reaviz";
+
+//useParams - хук который нам дает параметры с url, возвращает объект со всеми значениями
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import Row from "react-bootstrap/Row";
