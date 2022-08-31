@@ -9,7 +9,7 @@ import { setTheme } from "./ReduxState";
 import "./styles/NavBar.scss";
 
 function NavBarComponent() {
-
+  const url = process.env.REACT_APP_HOME_URL;
   const countryId = useSelector(state => state.countryId);
   const numberOf = useSelector(state => state.numberOf);
   const theme = useSelector(state => state.theme);
@@ -33,7 +33,7 @@ function NavBarComponent() {
       <Container className="nav-brend-container">
         <Link className="navbar-brand" to="/">
           <img 
-            src="/covid8.jpg"
+            src={`${url}/covid8.jpg`}
             width="50"
             height="50"
             className="d-inline-block m-2"
@@ -44,8 +44,8 @@ function NavBarComponent() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Link to={'/reported-cases/' + countryId} className="nav-link">Reported cases Estonia</Link>
-            <Link to={'/ranked-charts/' + (numberOf === 'total_cases' ? 'total_cases' : 'total_deaths') + '/20'} className="nav-link">Ranked charts</Link>
+            <Link to={`${url}/reported-cases/` + countryId} className="nav-link">Reported cases Estonia</Link>
+            <Link to={`${url}/ranked-charts/` + (numberOf === 'total_cases' ? 'total_cases' : 'total_deaths') + '/20'} className="nav-link">Ranked charts</Link>
           </Nav>
         </Navbar.Collapse>
         <Form.Check
