@@ -9,14 +9,22 @@
 }
 
 .dark {
-  background-color: black;
+  background-color: #212529;
   .nav-link:hover {
     color: white;
+  }
+  .nav-link {
+    color: #0b67a8;
+  }
+  .nav-link:active {
+    color: red;
   }
   .navbar-brand:hover {
     color: white;
   }
+
   .form-check-label:hover {
     color: white;
   }
+
 }
