@@ -4,6 +4,7 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import { BarChart } from "reaviz";
 import { useParams } from "react-router-dom";
+import "../styles/RankedCharts.scss";
 
 function RankedChartsComponent(props) {
     const formDom = useRef(null);
@@ -63,7 +64,7 @@ function RankedChartsComponent(props) {
                     />
                     <label className="mt-2">Select countries count</label>
                     {countryListCount.length ?
-                        <Form.Select defaultValue={count}>
+                        <Form.Select className="mb-5" defaultValue={count}>
                             {countryListCount}
                         </Form.Select>
                         : ""

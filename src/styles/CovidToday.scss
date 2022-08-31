@@ -1,8 +1,8 @@
 $caruselWidth: 100%;
 $caruselHeight: 60vh;
-$mainColor: #0b67a8;
-$textSize: 4em;
-$carouselBackground: #cee6ec;
+$mainColor: #2a0ba8;
+$textSize: 4rem;
+$carouselBackground: #88f790;
 
 .wrapper {
   width: $caruselWidth;
@@ -32,20 +32,9 @@ $carouselBackground: #cee6ec;
   background-color: $mainColor;
 }
 
-.carousel-indicators {
-  width: 20vw;
-  margin: auto;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  background-color: $mainColor;
-}
-
 .navbar-toggler {
   background-color: $carouselBackground;
   border: 2px solid $mainColor;
   border-radius: 10px;
 }
 
-.nav-link {
-  color: $mainColor;
-}

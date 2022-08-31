@@ -7,6 +7,7 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import CountryListComponent from "./CountryListComponent";
 import { setNumberOf } from "../ReduxState";
+import "../styles/ReportedCases.scss";
 
 function ReportedCasesComponent(props) {
 
@@ -92,7 +93,7 @@ function ReportedCasesComponent(props) {
                 </Form>
             </Col>
             <Col sm={8}>
-                {chartData ? (<AreaChart data={chartData} height={350} />) : ""}
+                {chartData ? (<AreaChart data={chartData} height="50vh" />) : ""}
             </Col>
         </Row>
     </>);

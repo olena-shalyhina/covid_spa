@@ -1,0 +1,13 @@
+$mainColor: #0b67a8;
+
+.form-check-label {
+  color: $mainColor;
+}
+
+@media (max-width: 576px) { 
+  .form-select {
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+  }
+}

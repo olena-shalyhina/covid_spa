@@ -7,10 +7,12 @@ import { useSelector } from "react-redux";
 function App() {
   const theme = useSelector(state => state.theme);
   return (
-    <Container className={theme}>
+    <div  className={theme}>
+    <Container>
       <NavBarComponent />
       <BodyComponent />
     </Container>
+    </div>
   );
 }
 

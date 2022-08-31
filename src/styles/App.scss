@@ -1,14 +1,22 @@
 @import "~bootstrap/scss/bootstrap";
 
-.light {
-  body {
-    background-color: #ffffff;
+.light, .dark {
+  height: 100vh;
+}
 
-  }
+.light {
+  background-color: white;
 }
 
 .dark {
-  body {
-    background-color: #000000;
+  background-color: black;
+  .nav-link:hover {
+    color: white;
+  }
+  .navbar-brand:hover {
+    color: white;
+  }
+  .form-check-label:hover {
+    color: white;
   }
 }

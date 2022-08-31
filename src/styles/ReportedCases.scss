@@ -1,0 +1,30 @@
+$mainColor: #0b67a8;
+
+.form-check-label {
+  color: $mainColor;
+}
+
+@media (max-width: 576px) { 
+  .d-flex {
+    flex-direction: column;
+    align-items: start;
+  }
+  .input-group > .input-group-text,
+  .input-group > .form-control,
+  .input-group > .form-select {
+    width: 100%;
+    border-radius: none;
+  }
+ 
+    // border-top-left-radius: 5px;
+    // border-top-left-radius: 5px;
+    // border-bottom-left-radius: 5px;
+    // border-bottom-right-radius: 5px;
+  }
+  
+
+  
+  
+  
+ 
+

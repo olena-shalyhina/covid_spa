@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { setTheme } from "./ReduxState";
+import "./styles/NavBar.scss";
 
 function NavBarComponent() {
 
@@ -29,14 +30,14 @@ function NavBarComponent() {
   // document.querySelectorAll('.form-check-label').forEach(elem => elem.style.color = 'black');
   return (
     <Navbar bg={theme} expand="lg">
-      <Container>
+      <Container className="nav-brend-container">
         <Link className="navbar-brand" to="/">
-          <img
-            src="/logo.svg"
+          <img 
+            src="/covid8.jpg"
             width="50"
             height="50"
-            className="d-inline-block"
-            alt="React Bootstrap logo"
+            className="d-inline-block m-2"
+            alt="Covid Spa Information logo"
           />
           Covid Spa Information
         </Link>
