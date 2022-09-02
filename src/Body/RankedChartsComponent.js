@@ -74,7 +74,7 @@ function RankedChartsComponent(props) {
             <Col sm={8}>
                 {chartData ? <BarChart
                     data={chartData}
-                    height={350}
+                    height="50vh"
                 /> : ""}
             </Col>
         </Row>

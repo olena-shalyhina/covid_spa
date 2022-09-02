@@ -9,17 +9,17 @@ $mainColor: #0b67a8;
     flex-direction: column;
     align-items: start;
   }
-  .input-group > .input-group-text,
-  .input-group > .form-control,
-  .input-group > .form-select {
-    width: 100%;
-    border-radius: none;
+  .input-group-text,
+  .form-control,
+  .form-select {
+    width: 100% !important;
+    border-top-left-radius: 5px !important;
+    border-top-right-radius:  5px !important;
+    border-bottom-left-radius:  5px !important;
+    border-bottom-right-radius:  5px !important;
+    margin-bottom: 10px;
   }
- 
-    // border-top-left-radius: 5px;
-    // border-top-left-radius: 5px;
-    // border-bottom-left-radius: 5px;
-    // border-bottom-right-radius: 5px;
+  
   }
   
 

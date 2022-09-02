@@ -9,9 +9,9 @@ function CountryListComponent(props) {
 
     return (
         <InputGroup className="mb-3 d-flex">
-            <InputGroup.Text >Select Country</InputGroup.Text>
+            <InputGroup.Text>Select Country</InputGroup.Text>
             <Form.Control aria-label="First name" onChange={(e) => setInputValue(e.target.value)} />
-            <Form.Select className="selected_country" onChange={(e) => props.handleCountrySelect(e.target.value)}
+            <Form.Select onChange={(e) => props.handleCountrySelect(e.target.value)}
             aria-label="Default select example"
             defaultValue={props.country}>
                 <option className="" value="">Open this select menu</option>

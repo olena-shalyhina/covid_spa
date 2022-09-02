@@ -5,26 +5,29 @@
 }
 
 .light {
-  background-color: white;
+  background-color: #f8f9fa;;
 }
 
 .dark {
   background-color: #212529;
-  .nav-link:hover {
-    color: white;
-  }
   .nav-link {
     color: #0b67a8;
   }
-  .nav-link:active {
-    color: red;
+  .nav-link:hover {
+    color: #dcec6f;
+  }
+  .nav-link:focus {
+    color: #dcec6f;
   }
   .navbar-brand:hover {
-    color: white;
+    color: #dcec6f;
   }
 
   .form-check-label:hover {
-    color: white;
+    color: #dcec6f;
+  }
+  .form-check-label:focus {
+    color: #dcec6f;
   }
 
 }
