@@ -64,7 +64,7 @@ function RankedChartsComponent(props) {
                     />
                     <label className="mt-2">Select countries count</label>
                     {countryListCount.length ?
-                        <Form.Select className="mb-5" defaultValue={count}>
+                        <Form.Select className="form-select-ranked mb-5" defaultValue={count}>
                             {countryListCount}
                         </Form.Select>
                         : ""

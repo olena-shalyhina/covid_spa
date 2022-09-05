@@ -9,8 +9,8 @@ import { setTheme } from "./ReduxState";
 import "./styles/NavBar.scss";
 
 function NavBarComponent() {
-  const url = process.env.REACT_APP_HOME_URL;
-  // const url  = '/covid_spa';
+  const env = process.env.NODE_ENV;
+  const url = process.env[`REACT_APP_HOME_URL_${env}`];
   const countryId = useSelector(state => state.countryId);
   const numberOf = useSelector(state => state.numberOf);
   const theme = useSelector(state => state.theme);
@@ -23,18 +23,12 @@ function NavBarComponent() {
       dispatch(setTheme('light'));
     }
   }
-  // document.body.style.background = 'black';
-  // document.getElementsByClassName('navbar-brand')[0].style.color = 'white';
-  // document.querySelectorAll('.form-check-label').forEach(elem => elem.style.color = '#0b67a8');
-  // document.body.style.background = 'white';
-  // document.getElementsByClassName('navbar-brand')[0].style.color = 'black';
-  // document.querySelectorAll('.form-check-label').forEach(elem => elem.style.color = 'black');
+ 
   return (
     <Navbar bg={theme} expand="lg">
       <Container className="nav-brend-container">
-        <Link className="navbar-brand" to={'${url}/'}>
+        <Link className="navbar-brand" to={`${url}/`}>
           <img 
-            // src="/covid8.jpg"
             src={`${url}/covid8.jpg`}
             width="50"
             height="50"
@@ -46,8 +40,6 @@ function NavBarComponent() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            {/* <Link to={"/reported-cases/" + countryId} className="nav-link">Reported cases Estonia</Link>
-            <Link to={"/ranked-charts/" + (numberOf === 'total_cases' ? 'total_cases' : 'total_deaths') + '/20'} className="nav-link">Ranked charts</Link> */}
             <Link to={`${url}/reported-cases/` + countryId} className="nav-link">Reported cases Estonia</Link>
             <Link to={`${url}/ranked-charts/` + (numberOf === 'total_cases' ? 'total_cases' : 'total_deaths') + '/20'} className="nav-link">Ranked charts</Link>
           </Nav>
