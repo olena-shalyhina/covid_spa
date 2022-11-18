@@ -1,49 +1,53 @@
-# Covid Spa Information
+# Covid Epidemic Information
 
-### ***Covid Spa Information*** - a one-page application for monitoring mortality, morbidity and the number of cases of recovery from COVID-19 in almost all countries of the world.
-### This is an interactive application that allows the user to see both the latest statistics and data for the entire period of the epidemic.  
+### **_Covid Epidemic Information_** - a one-page application for monitoring mortality, morbidity and the number of cases of recovery from COVID-19 in almost all countries of the world.
+
+### This is an interactive application that allows the user to see both the latest statistics and data for the entire period of the epidemic.
+
 ### The visualization of information is provided by graphs that reflect the data, depending on the user's choice.
-____
-## Resources and tools used:  
-+ ### [React](https://reactjs.org/) 
-+ ### [React Bootstrap](https://react-bootstrap.netlify.app/)  
-+ ### [React Router](https://reactrouter.com/en/v6.3.0/getting-started/installation)  
-+ ### [Redux](https://redux.js.org/)  
-+ ### [Reaviz](https://reaviz.io/?path=/story/docs-intro--page)  
-+ ### [SASS](https://sass-lang.com/)  
-___
+
+---
+
+## Resources and tools used:
+
+- ### [React](https://reactjs.org/)
+- ### [React Bootstrap](https://react-bootstrap.netlify.app/)
+- ### [React Router](https://reactrouter.com/en/v6.3.0/getting-started/installation)
+- ### [Redux](https://redux.js.org/)
+- ### [Reaviz](https://reaviz.io/?path=/story/docs-intro--page)
+- ### [SASS](https://sass-lang.com/)
+
+---
 
 ## Fast start:
+
 ![node](https://img.shields.io/node/v/npm)
-![npm](https://img.shields.io/npm/v/npm)  
+![npm](https://img.shields.io/npm/v/npm)
 
- 1. ### Clone the repository: git clone https://github.com/olena-shalyhina/covid_spa
-     
- 2. ### Go to the project folder :  
+1.  ### Clone the repository: git clone https://github.com/olena-shalyhina/covid_spa
+2.  ### Go to the project folder :
           cd covid_spa
-    
- 3. ### Installation dependency :
-           npm install  
+3.  ### Installation dependency :
 
- 4. ### Start Project :
+           npm install
+
+4.  ### Start Project :
            npm start
-
-
-
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-___
+
+---
 
 ## Available scripts
 
-+ The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- The page will reload when you make changes.\
+  You may also see any lint errors in the console.
 
   ### `npm test`
 
-+ Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Launches the test runner in the interactive watch mode.\
+  See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
   ### `npm run build`
 
@@ -54,4 +58,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
