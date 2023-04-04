@@ -1,11 +1,12 @@
-@import "~bootstrap/scss/bootstrap";
+@import '~bootstrap/scss/bootstrap';
 
-.light, .dark {
-  height: 100vh;
+.light,
+.dark {
+  min-height: 100vh;
 }
 
 .light {
-  background-color: #f8f9fa;;
+  background-color: #f8f9fa;
 }
 
 .dark {
@@ -29,5 +30,4 @@
   .form-check-label:focus {
     color: #dcec6f;
   }
-
 }

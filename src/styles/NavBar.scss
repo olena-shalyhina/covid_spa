@@ -1,8 +1,8 @@
 $brandColor: rgb(4, 191, 29);
-$brandFontSize: 3.5vw;
+$brandFontSize: 2.5em;
 $mainColor: #0b67a8;
 
-.nav-brend-container {
+.nav-brand-container {
   border: 2px solid $mainColor;
   border-radius: 10px;
   padding: 10px;
@@ -12,19 +12,19 @@ $mainColor: #0b67a8;
   color: $brandColor;
   font-size: $brandFontSize;
   font-weight: 700;
-  padding-left: 20px;
 }
 
 .nav-link {
   color: $mainColor;
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: 500;
+  padding: 5px 10px;
+  margin: 5px;
 }
 
 @media (max-width: 576px) {
   .navbar-brand {
     color: $brandColor;
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
-  
 }

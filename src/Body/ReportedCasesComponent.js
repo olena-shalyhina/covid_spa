@@ -71,7 +71,7 @@ function ReportedCasesComponent(props) {
           country={params.country}
         />
       ) : (
-        ''
+        <LoaderComponent />
       )}
       <Row>
         <Col sm={4}>
@@ -94,11 +94,7 @@ function ReportedCasesComponent(props) {
           </Form>
         </Col>
         <Col sm={8}>
-          {chartData ? (
-            <AreaChart data={chartData} height="50vh" />
-          ) : (
-            <LoaderComponent />
-          )}
+          {chartData ? <AreaChart data={chartData} height="50vh" /> : ''}
         </Col>
       </Row>
     </>

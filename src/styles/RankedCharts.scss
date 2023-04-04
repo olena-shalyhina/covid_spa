@@ -8,7 +8,8 @@ $mainColor: #0b67a8;
 @media (max-width: 576px) {
   .form-select-ranked,
   .select_label {
-    width: 50%;
+    width: 100%;
     margin: auto;
+    font-size: 0.9rem;
   }
 }

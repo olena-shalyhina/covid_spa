@@ -1,12 +1,12 @@
 .loader_wrapper {
   display: flex;
+  justify-content: center;
   align-items: center;
-  color: rgb(4, 191, 29);
+  color: #88f790;
   column-gap: 30px;
 }
 
 .loader {
-  // color: official;
   display: inline-block;
   position: relative;
   width: 80px;
@@ -25,7 +25,7 @@
   width: 6px;
   height: 18px;
   border-radius: 20%;
-  background: rgb(4, 191, 29);
+  background: #88f790;
 }
 .loader div:nth-child(1) {
   transform: rotate(0deg);
