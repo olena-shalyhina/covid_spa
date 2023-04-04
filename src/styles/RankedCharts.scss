@@ -1,11 +1,13 @@
 $mainColor: #0b67a8;
 
-.form-check-label {
+.form-check-label,
+.select_label {
   color: $mainColor;
 }
 
 @media (max-width: 576px) {
-  .form-select-ranked {
+  .form-select-ranked,
+  .select_label {
     width: 50%;
     margin: auto;
   }

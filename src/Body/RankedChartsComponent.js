@@ -78,7 +78,7 @@ function RankedChartsComponent(props) {
               label={`Total number of cases`}
               defaultChecked={cases === 'total_cases'}
             />
-            <label className="mt-2">Select countries count</label>
+            <label className="select_label mt-2">Select countries count</label>
             {countryListCount.length ? (
               <Form.Select
                 className="form-select-ranked mb-5"
