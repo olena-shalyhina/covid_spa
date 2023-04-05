@@ -1,6 +1,6 @@
 # Covid Epidemic Information
 
-### **_Covid Epidemic Information_** - a one-page application for monitoring mortality, morbidity and the number of cases of recovery from COVID-19 in almost all countries of the world.
+### **_Covid Epidemic Information_** - a single-page application for monitoring mortality, morbidity and the number of cases of recovery from COVID-19 in almost all countries of the world.
 
 ### This is an interactive application that allows the user to see both the latest statistics and data for the entire period of the epidemic.
 
@@ -21,8 +21,9 @@
 
 ## Fast start:
 
-![node](https://img.shields.io/node/v/npm)
-![npm](https://img.shields.io/npm/v/npm)
+![node](https://img.shields.io/badge/node-v%2016.16.0-brightgreen)
+![npm](https://img.shields.io/badge/npm-v%208.11.0-blue)
+![reaviz](https://img.shields.io/badge/reaviz-v%2013.1.6-orange)
 
 1.  ### Clone the repository: git clone https://github.com/olena-shalyhina/covid_spa
 2.  ### Go to the project folder :
